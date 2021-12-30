@@ -63,7 +63,7 @@ create table sucursal_taller_f1_hcb_s1(
 create table sucursal_venta_f1_hcb_s1(
   sucursal_id   number(10,0) not null,
   hora_apertura date         not null,
-  hora_cierre   date         not null
+  hora_cierre   date         not null,
   constraint sucursal_venta_f1_hcb_s1_pk primary key (sucursal_id),
   constraint sucursal_venta_fk foreign key (sucursal_id)
   references sucursal_f1_hcb_s1 (sucursal_id)
