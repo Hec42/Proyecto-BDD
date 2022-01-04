@@ -9,8 +9,8 @@ create table sucursal_f1_hcb_s1(
   es_taller   number(1,0)   not null,
   es_venta    number(1,0)   not null,
   nombre      varchar2(40)  not null,
-  latitud     float(126)    not null,
-  longitud    float(126)    not null,
+  latitud     varchar2(10)  not null,
+  longitud    varchar2(10)  not null,
   url         varchar2(200) not null
 );
 
@@ -73,7 +73,7 @@ create table sucursal_venta_f1_hcb_s1(
 create table servicio_laptop_f1_hcb_s1(
   num_servicio  number(10,0)    not null,
   laptop_id     number(10,0)    not null,
-  importe       number(8,2)     not null,
+  importe       varchar2(10)    not null,
   diagnostico   varchar2(2000)  not null,
   factura       blob,
   sucursal_id   number(10,0)    not null,
@@ -108,7 +108,7 @@ create table laptop_f2_hcb_s1(
 create table laptop_inventario_f2_hcb_s1(
   laptop_id         number(10,0)  not null,
   fecha_status      date          not null,
-  sucursal_id       number(10,0)  not null,
+  sucursal_id       number(10,0),
   status_laptop_id  number(5,0)   not null,
   constraint laptop_inventario_f2_hcb_s1_pk primary key (laptop_id),
   constraint laptop_inventario_status_laptop_id_fk foreign key (status_laptop_id)

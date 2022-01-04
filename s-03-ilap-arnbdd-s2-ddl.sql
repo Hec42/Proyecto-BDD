@@ -47,7 +47,7 @@ create table laptop_f3_arn_s2(
   num_serie                 varchar2(18)      not null,
   cantidad_ram              number(6, 0)      not null,
   caracteristicas_extras    varchar2(2000)    not null,
-  laptop_reemplazo_id       number(10, 0)     not null,
+  laptop_reemplazo_id       number(10, 0),
   tipo_procesador_id        number(5, 0)      not null,
   tipo_tarjeta_video_id     number(5, 0)      not null,
   tipo_almacenamiento_id    number(5, 0)      not null,
@@ -70,8 +70,8 @@ create table sucursal_f4_arn_s2(
   es_taller      number(1, 0)     not null,
   es_venta       number(1, 0)     not null,
   nombre         varchar2(40)     not null,
-  latitud        binary_float     not null,
-  longitud       binary_float     not null,
+  latitud        varchar2(10)     not null,
+  longitud       varchar2(10)     not null,
   url            varchar2(200)    not null,
   constraint sucursal_f4_arn_s2_pk primary key (sucursal_id)
 );
@@ -100,7 +100,7 @@ create table sucursal_venta_f4_arn_s2(
 create table servicio_laptop_f4_arn_s2(
   num_servicio    number(10, 0)     not null,
   laptop_id       number(10, 0)     not null,
-  importe         number(8, 2)      not null,
+  importe         varchar2(10)      not null,
   diagnostico     varchar2(2000)    not null,
   factura         blob,
   sucursal_id     number(10, 0)     not null,
